@@ -1,0 +1,119 @@
+/* Responsive rules and preferences: phone and tablet breakpoints, dark mode, reduced motion. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #030814;
+    --page-bg: #030814;
+    --fg: #eaf2ff;
+    --muted: #9bb0d6;
+    --line: rgba(160, 196, 255, 0.12);
+    --accent: #5fa8ff;
+    --on-accent: #04122b;
+    --ok: #5ee3a8;
+    --bad: #ff8a8a;
+    --str: #8fd3ff;
+    --chip: rgba(95, 168, 255, 0.16);
+    --glass: rgba(10, 24, 56, 0.38);
+    --glass-solid: #081430;
+    --glass-sheen: rgba(255, 255, 255, 0.1);
+    --glass-edge: rgba(170, 205, 255, 0.22);
+    --glass-inner: rgba(255, 255, 255, 0.2);
+    --glass-shadow: rgba(0, 0, 0, 0.5);
+    color-scheme: dark;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass {
+    background: var(--glass-solid);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+@media (max-width: 719px) {
+  .pill-links { display: none; }
+  .tabbar { display: grid; }
+  .foot { padding-bottom: 8rem; }
+}
+
+@media (min-width: 900px) {
+  .hero .wrap { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 4rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero h1, .lede, .actions { animation: none; }
+}
+
+@media (min-width: 860px) {
+  .split { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 4.5rem; }
+}
+
+
+@media (min-width: 520px) {
+  .group > li { grid-template-columns: 8rem minmax(0, 1fr); }
+}
+
+@media (min-width: 720px) {
+  .spec-row { grid-template-columns: 13rem minmax(0, 1fr); }
+}
+
+@media (min-width: 860px) {
+  .road { --road-x: 50%; --road-w: min(1000px, 100%); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .road-dash { animation: march-dash 1.2s linear infinite; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .road-star { animation: twinkle 1.8s ease-in-out infinite; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .step:last-child .node.on { animation: beacon 2.4s ease-out infinite; }
+}
+
+@media (min-width: 860px) {
+  .step { grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr); }
+  .node { grid-column: 2; }
+  .step .step-card { grid-column: 1; }
+  .step:nth-child(even) .step-card { grid-column: 3; }
+  .step:nth-child(odd) .step-card { text-align: right; }
+}
+
+/* The sparkle keeps this same look while the page scrolls */
+@media (prefers-reduced-motion: reduce) {
+  .cursor-ring { animation: none; }
+}
+
+@media (min-width: 720px) {
+  .skill-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .skill-card.wide { grid-column: 1 / -1; }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .skill-card { transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .skill-card:hover { transform: translateY(-3px); }
+}
+
+@media (min-width: 900px) {
+  .projects { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Phones: the contact address becomes a stacked card with a full-width copy button */
+@media (max-width: 520px) {
+  .address {
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 22px;
+    padding: 1rem;
+    text-align: center;
+  }
+  .address span {
+    font-size: 0.9rem;
+  }
+  .address .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

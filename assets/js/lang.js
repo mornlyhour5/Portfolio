@@ -8,7 +8,7 @@
   // Button text and labels, and form placeholders, follow the current language
   function sync() {
     const km = root.lang === 'km';
-    toggle.textContent = km ? 'EN' : 'KM';
+    toggle.textContent = km ? 'EN' : 'KH';
     const action = km ? 'ប្តូរទៅភាសាអង់គ្លេស' : 'Switch language to Khmer';
     toggle.setAttribute('aria-label', action);
     toggle.title = action;

@@ -1,6 +1,8 @@
 <div class="prose intro">
-  <p><?= bi("I'm Morn Lyhour, a Software Engineering graduate of Beltei International University. I'm early in my career, and I'm learning on the job every day.", 'ខ្ញុំ Morn Lyhour បានបញ្ចប់ការសិក្សាផ្នែកវិស្វកម្មកម្មវិធីពីសាកលវិទ្យាល័យអន្តរជាតិ Beltei។ ខ្ញុំនៅដើមអាជីពរបស់ខ្ញុំ ហើយរៀនពីការងារជារៀងរាល់ថ្ងៃ។') ?></p>
-  <p><?= bi('My first real step was a four-month backend internship focused on Laravel, PostgreSQL, RESTful APIs and the Service-Repository pattern. I enjoy designing solid databases and clean backend logic.', 'ជំហានដំបូងរបស់ខ្ញុំគឺការហ្វឹកហាត់ផ្នែក backend រយៈពេល 4 ខែ ដោយផ្តោតលើ Laravel, PostgreSQL, RESTful APIs និងលំនាំ Service-Repository។ ខ្ញុំចូលចិត្តរចនាមូលដ្ឋានទិន្នន័យឲ្យរឹងមាំ និងតក្កវិជ្ជា backend ឲ្យស្អាត។') ?></p>
-  <p><?= bi('Today I work as an application developer at First Cambodia, building .NET systems and Power BI reports. Every project teaches me something new.', 'ថ្ងៃនេះ ខ្ញុំធ្វើការជាអ្នកអភិវឌ្ឍន៍កម្មវិធីនៅ First Cambodia ដោយបង្កើតប្រព័ន្ធ .NET និងរបាយការណ៍ Power BI។ គម្រោងនីមួយៗបង្រៀនខ្ញុំនូវអ្វីថ្មី។') ?></p>
-  <p><a class="text-link" href="#contact"><?= bi('Say hello →', 'ទាក់ទងខ្ញុំ →') ?></a></p>
+  <p><?= bi("I'm Lyhour Morn, a Software Engineering graduate from BELTEI International University with a passion for backend development, databases, and building practical software solutions.", 'ខ្ញុំ មន លីហួរ និស្សិតបញ្ចប់ថ្នាក់បរិញ្ញាបត្រវិស្វកម្មសូហ្វវែរពីសាកលវិទ្យាល័យ ប៊ែលធី អន្តរជាតិ ដែលមានចំណង់ចំណូលចិត្តលើការអភិវឌ្ឍន៍ Backend មូលដ្ឋានទិន្នន័យ និងការបង្កើតដំណោះស្រាយកម្មវិធីជាក់ស្តែង។') ?></p>
+  
+  <p><?= bi('I started my professional journey with a four-month Backend Developer internship, working with Laravel, PostgreSQL, RESTful APIs, and Service-Repository architecture.', 'ខ្ញុំបានចាប់ផ្តើមដំណើរការអាជីពការងាររបស់ខ្ញុំជាមួយនឹងការហ្វឹកហាត់ការងារផ្នែក Backend Developer រយៈពេលបួនខែ ដោយធ្វើការជាមួយ Laravel, PostgreSQL, RESTful APIs និងស្ថាបត្យកម្ម Service-Repository។') ?></p>
+  
+  <p><?= bi("Today, I'm an Application Developer at First Cambodia, developing T-SQL Stored Procedures, building reports with Report Builder and supporting customers with Core Banking reporting requirements.", 'បច្ចុប្បន្ន ខ្ញុំជាអ្នកអភិវឌ្ឍន៍កម្មវិធីនៅ First Cambodia ដោយអភិវឌ្ឍ T-SQL Stored Procedures បង្កើតរបាយការណ៍ជាមួយ Report Builder និង Power BI ព្រមទាំងគាំទ្រអតិថិជនលើតម្រូវការរបាយការណ៍ប្រព័ន្ធធនាគារស្នូល។') ?></p>
+  
 </div>

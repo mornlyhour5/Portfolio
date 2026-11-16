@@ -6,9 +6,13 @@ $contactError = isset($_GET['error']);
 <section class="section" id="contact">
   <div class="wrap">
     <div class="card glass">
+      <div class="contact-intro">
       <h2><?= bi('Get in touch', 'ទាក់ទងមកខ្ញុំ') ?></h2>
-      <p><?= bi("I'm early in my career, and I'm always glad to hear from people in the industry. If you have advice, a question or a new idea, please send me a message.", 'ខ្ញុំនៅដើមអាជីព ហើយខ្ញុំរីករាយជានិច្ចនៅពេលទទួលសារពីមនុស្សក្នុងវិស័យនេះ។ បើអ្នកមានដំបូន្មាន សំណួរ ឬគំនិតថ្មី សូមផ្ញើសារមកខ្ញុំ។') ?></p>
+      <p class="lead"><?= bi("I'm early in my career, and I'm always glad to hear from people in the industry. If you have advice, a question or a new idea, please send me a message.", 'ខ្ញុំនៅដើមអាជីព ហើយខ្ញុំរីករាយជានិច្ចនៅពេលទទួលសារពីមនុស្សក្នុងវិស័យនេះ។ បើអ្នកមានដំបូន្មាន សំណួរ ឬគំនិតថ្មី សូមផ្ញើសារមកខ្ញុំ។') ?></p>
 
+      </div>
+
+      <div class="contact-main">
       <?php if ($contactSent): ?>
         <p class="notice ok" role="status"><?= bi('Thanks! Your message has been sent.', 'អរគុណ! សាររបស់អ្នកត្រូវបានផ្ញើរួចហើយ។') ?></p>
       <?php elseif ($contactError): ?>
@@ -42,6 +46,9 @@ $contactError = isset($_GET['error']);
           <button class="btn primary" type="submit"><?= bi('Send message', 'ផ្ញើសារ') ?> <span aria-hidden="true">→</span></button>
         </div>
       </form>
+      </div>
+
+      <div class="contact-side">
 
       <div class="divider"><span><?= bi('or reach me directly', 'ឬទាក់ទងដោយផ្ទាល់') ?></span></div>
 
@@ -54,6 +61,7 @@ $contactError = isset($_GET['error']);
       <div class="actions">
         <a class="btn glass" href="mailto:<?= e($profile['email']) ?>?subject=Contact%20from%20Portfolio&amp;body=Hello%20Hour%2C"><?= bi('Open in email app', 'បើកក្នុងកម្មវិធីអ៊ីមែល') ?></a>
         <a class="btn glass" href="<?= e($profile['linkedin']) ?>" target="_blank" rel="noopener"><?= bi('LinkedIn profile', 'ប្រវត្តិរូប LinkedIn') ?></a>
+      </div>
       </div>
     </div>
   </div>

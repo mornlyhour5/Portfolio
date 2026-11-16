@@ -12,7 +12,7 @@
     clearTimeout(statusTimer);
     statusTimer = setTimeout(() => { status.textContent = ''; }, 2600);
   };
-  copyBtn.addEventListener('click', async () => {
+  copyBtn?.addEventListener('click', async () => {
     const km = document.documentElement.lang === 'km';
     try {
       await navigator.clipboard.writeText(addr.textContent.trim());
@@ -148,5 +148,43 @@
     window.addEventListener('resize', build);
   }
   build();
+
+  // Typing effect in the hero: the greeting types out, then the title. Reduced motion shows the text at once.
+  // Switching language stops the typing and shows the full text in the new language.
+  const typedGreeting = document.querySelector('.hero .greeting');
+  const typedTitle = document.querySelector('.hero h1');
+  if (typedGreeting && typedTitle && !motionQuery.matches) {
+    let typingRun = 0;
+    const pause = (ms) => new Promise((done) => setTimeout(done, ms));
+    // Only the visible language's span types; the other language is hidden by CSS
+    const visibleSpan = (el) => [...el.children].find((s) => getComputedStyle(s).display !== 'none');
+    async function typeOut(el, speed, run) {
+      const span = visibleSpan(el);
+      if (!span) return;
+      const full = span.textContent;
+      const text = document.createTextNode('');
+      const caret = document.createElement('span');
+      caret.className = 'type-caret';
+      caret.setAttribute('aria-hidden', 'true');
+      span.textContent = '';
+      span.append(text, caret);
+      for (let i = 1; i <= full.length && run === typingRun; i++) {
+        text.data = full.slice(0, i);
+        await pause(speed);
+      }
+      text.data = full;
+      caret.remove();
+    }
+    async function typeHero() {
+      const run = ++typingRun;
+      await typeOut(typedGreeting, 70, run);
+      if (run !== typingRun) return;
+      await pause(180);
+      if (run !== typingRun) return;
+      await typeOut(typedTitle, 36, run);
+    }
+    document.addEventListener('langchange', () => { typingRun++; });
+    typeHero();
+  }
 
 })();

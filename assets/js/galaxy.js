@@ -543,6 +543,12 @@
     const dt = Math.min(0.05, Math.max(0, (now - last) / 1000));
     last = now;
     const animate = !motionQuery.matches;
+    if (!starsOn) {
+      // Stars off: only the cursor is updated, and only while it is still catching up with the pointer
+      updateCursor(dt, animate);
+      if (animate && (Math.abs(hoverX - cx) > 0.5 || Math.abs(hoverY - cy) > 0.5)) raf = requestAnimationFrame(tick);
+      return;
+    }
     if (animate) {
       t += dt;
       advance(dt);
@@ -559,17 +565,45 @@
     if (animate) raf = requestAnimationFrame(tick);
   }
 
+  // Stars on or off. The choice is kept on this device. When off, the sky and the star cursor are hidden
+  // and the animation loop stops.
+  let starsOn = true;
+  try { starsOn = localStorage.getItem('portfolio-stars') !== 'off'; } catch (e) { starsOn = true; }
+  const starSelect = document.getElementById('star-select');
+
   function schedule() {
     if (!raf) raf = requestAnimationFrame(tick);
+  }
+
+  // The stars choice in the settings menu shows the current state
+  function paintStarToggle() {
+    if (starSelect) starSelect.value = starsOn ? 'show' : 'hide';
+  }
+
+  function setStars(on) {
+    starsOn = on;
+    root.dataset.stars = on ? 'on' : 'off';
+    try { localStorage.setItem('portfolio-stars', on ? 'on' : 'off'); } catch (e) { /* the choice is not saved */ }
+    paintStarToggle();
+    // A hidden canvas has no size, so it is measured again before the stars come back (resize also schedules a frame)
+    if (on) resize();
+  }
+
+  root.dataset.stars = starsOn ? 'on' : 'off';
+  paintStarToggle();
+  if (starSelect) {
+    starSelect.addEventListener('change', () => setStars(starSelect.value === 'show'));
   }
 
   document.addEventListener('themechange', schedule);
   motionQuery.addEventListener('change', schedule);
   window.addEventListener('resize', resize);
   window.addEventListener('pointermove', (e) => {
-    if (!W || !H) return;
-    px = e.clientX / W;
-    py = e.clientY / H;
+    // The sky may be hidden and have no size yet, so the star cursor still follows the pointer
+    if (W && H) {
+      px = e.clientX / W;
+      py = e.clientY / H;
+    }
     hovering = true;
     hoverX = e.clientX;
     hoverY = e.clientY;

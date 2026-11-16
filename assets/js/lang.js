@@ -8,7 +8,14 @@
   // The menu and form placeholders follow the current language
   function sync() {
     const km = root.lang === 'km';
+<<<<<<< HEAD
     select.value = km ? 'km' : 'en';
+=======
+    toggle.textContent = km ? 'EN' : 'KH';
+    const action = km ? 'ប្តូរទៅភាសាអង់គ្លេស' : 'Switch language to Khmer';
+    toggle.setAttribute('aria-label', action);
+    toggle.title = action;
+>>>>>>> 27c042c44db715541b68b809eec02fd961e0039b
     document.querySelectorAll('[data-ph-en]').forEach((el) => {
       el.placeholder = km ? el.dataset.phKm : el.dataset.phEn;
     });

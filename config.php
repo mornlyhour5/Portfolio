@@ -4,6 +4,7 @@ declare(strict_types=1);
 $profile = [
     'nickname' => 'Hour',
     'name'     => 'Lyhour Morn',
+<<<<<<< HEAD
     'email'    => 'lyhou1.morn@gmail.com',
     'linkedin' => 'https://www.linkedin.com/in/lyhour-morn/',
     'github'   => 'https://github.com/mornlyhour5',
@@ -28,6 +29,13 @@ $site = [
         '4.0.9' => 'The settings drop-downs are styled glass lists like the settings panel, with keyboard support',
         '4.0.10' => 'The road star passes behind the experience cards instead of over them',
     ],
+=======
+    'email'    => 'mornlyhour508@gmail.com',
+    'linkedin' => 'www.linkedin.com/in/lyhour-morn',
+    'github'   => 'https://github.com/mornlyhour5',
+    'telegram' => 'https://t.me/lyhourmorn',
+    'facebook' => 'https://www.facebook.com/share/1XAyCuFmbN/?mibextid=wwXIfr',
+>>>>>>> 27c042c44db715541b68b809eec02fd961e0039b
 ];
 
 $sections = [
@@ -114,18 +122,30 @@ $skills = [
         'name' => ['en' => 'Frontend', 'km' => 'ផ្នែក Frontend'],
         'wide' => false,
         'tags' => [
+<<<<<<< HEAD
             'Vue.js', 
             'JavaScript (ES6+)',
             'React.js', 
+=======
+            'React.js', 
+            'Vue.js', 
+            'JavaScript (ES6+)'
+>>>>>>> 27c042c44db715541b68b809eec02fd961e0039b
         ]
     ],
     [
         'name' => ['en' => 'Databases', 'km' => 'មូលដ្ឋានទិន្នន័យ'],
         'wide' => false,
         'tags' => [
+<<<<<<< HEAD
             'MySQL',
             'Microsoft SQL Server',
             'PostgreSQL',
+=======
+            'PostgreSQL',
+            'MySQL',
+            'Microsoft SQL Server',
+>>>>>>> 27c042c44db715541b68b809eec02fd961e0039b
             'Oracle Database'
         ]
     ],
@@ -147,6 +167,7 @@ $skills = [
 
 $projects = [
     [
+<<<<<<< HEAD
         'kind'   => ['en' => 'Core Banking & Reporting', 'km' => 'ប្រព័ន្ធធនាគារស្នូល និងរបាយការណ៍'],
         'title'  => 'Report builder',
         'text'   => [
@@ -157,6 +178,8 @@ $projects = [
         'github' => null,
     ],
     [
+=======
+>>>>>>> 27c042c44db715541b68b809eec02fd961e0039b
         'kind'   => ['en' => 'Desktop utility', 'km' => 'កម្មវិធីលើកុំព្យូទ័រ'],
         'title' => 'TheHours YT Downloader',
         'text'  => [
@@ -235,3 +258,10 @@ $socials = [
     'Facebook' => $profile['facebook'],
     'Gmail' => $profile['email'],
 ];
+
+
+// Contact email configuration
+$contactRecipient = $profile['email'];
+
+// Must be an email address authorized by your mail provider.
+$contactFromEmail = 'no-reply@yourdomain.com';
